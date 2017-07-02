@@ -23,8 +23,8 @@ header img {
 }
 
 #content {
-  width: 960px;
-  margin: 0px 5rem;
+  width: 90%;
+  margin: 0rem 5rem;
 }
 
 #mainbanner {
@@ -35,19 +35,19 @@ header img {
 }
 
 
-.layer {
+.layer, .layer_mobile {
   background-color: black;
   width: 27rem;
   font-weight: bold;
   align-items: center;
 }
 
-.layer h4 {
+.layer h4, .layer_mobile h4 {
   font-size: 1rem;
   margin: 2rem 0rem 0.25rem 3rem;
 }
 
-.layer h2 {
+.layer h2, .layer_mobile h2 {
   font-size: 2rem;
   margin-left: 3rem;
   margin-bottom: 2rem;
@@ -55,6 +55,7 @@ header img {
 
 #navigation, #menu {
   background-color: firebrick;
+  justify-content: center;
 }
 
 #category {
@@ -64,7 +65,7 @@ header img {
 }
 
 #category_tablet {
-  width: 960px;
+  width: 100%;
   margin: 0.75rem 0rem;
   justify-content: center;
 }
@@ -78,20 +79,14 @@ header img {
   justify-content: space-between;
 }
 
-.item_desktop {
+.item {
   width: 30%;
   border: 4px solid black;
   margin-top: 3rem;
   display: block;
 }
 
-.item_tablet {
-  width: 47%;
-  border: 4px solid black;
-  margin-top: 3rem;
-  display: block;
-}
-.item_desktop img, .item_tablet img {
+.item img {
   max-width: 80%;
   margin: 2rem auto 2rem auto;
   display: block;
@@ -130,13 +125,28 @@ footer {
 
 /* NOTE: Responsive */
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) and (min-width: 470px){
   html {font-size: 1.5rem;}
   #navigation {display: none;}
-  .item_desktop {display: none;}
+  .item {width: 47%;}
+  .layer_mobile {display: none;}
 }
 
 @media only screen and (min-width: 1025px) {
   #menu {display: none;}
-  .item_tablet {display: none;}
+  .layer_mobile {display: none;}
+}
+
+@media only screen and (max-width: 470px) {
+    #menu {display: none;}
+    #navigation {display: none;}
+    header h4 {margin: 0.66rem 1rem;
+    }
+    header img {height: 1rem;}
+    #content {width: 100%; margin: 0rem 1.5rem;}
+    .layer {display: none;}
+    .item {width: 90%;}
+    #information {display: block;}
+    .box {width: 90%; margin-top: 0.5rem;}
+    footer {text-align: center;}
 }
